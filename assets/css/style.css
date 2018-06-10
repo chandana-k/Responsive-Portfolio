@@ -1,5 +1,9 @@
 /* About me page */
 
+html{
+    /* max-width: 980px; */
+    margin: 0 auto;
+}
 body { 
     background-image: url('../images/vintage-concrete.png');
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
@@ -80,6 +84,13 @@ section p{
     margin-right: 30px;
     margin-bottom: 25px;
 }
+/* Incorporated CSS animation for the Image */
+.section-image img{
+    height: 225px;
+    width: 225px;
+    -webkit-transition: width 2s, height 2s; /* Safari */
+    transition: width 2s, height 2s;
+}
 
 footer {
     background-color: #666666;
@@ -93,7 +104,6 @@ footer {
     width: 100%;
     border-top: 10px solid #4aaaa5;
 }
-
 
 /* Portfolio page */
 
@@ -146,6 +156,75 @@ input[type=text] {
 form textarea {
     width: 100%;
     border: 1px solid #ccc;
+}
+
+/* Created media queries for the Responsive-portfolio assignment. Used 'Browser Width' and 'Window Resizer' extensions. */
+/* On screens that are 980px or less */
+@media screen and (max-width: 980px) {
+    /* Changing Image size per specification */
+    .section-image img{
+        height: 150px;
+        width: 150px;
+    }
+    /* Changing the content area/ section max-width  */
+    section{
+        max-width: 650px;
+        float: left;
+        margin-left: 10px;
+    }
+}
+  
+/* On screens that are 768px or less */
+@media screen and (max-width: 768px) {
+     /* Changing Image size */
+    .section-image img{
+        height: 200px;
+        width: 200px;
+    }
+    /* Changing the content area max-width per specification by measuring the width using page ruler extension */
+    section{
+        max-width: 712px;
+        float: none;
+        margin: 40px auto;
+    }
+}
+
+
+/* On screens that are 640px or less */
+@media screen and (max-width: 640px) {
+
+    /* Changing Image size */
+    .section-image img{
+        height: 225px;
+        width: 225px;
+    }
+
+    header{
+        display: static;
+    }
+    /* Removing float for main heading to center it per specification */
+    aside {
+        float: none
+    }
+    /* Centering the navigation per specification */
+    nav{
+        float: none;
+    }
+    h2 {
+        margin:20px;
+    }
+    /* Centering the content image */
+    .section-image{
+        float: none;
+        text-align: center;
+        display: inherit;
+    }
+    /* Making the list into one column for the smaller screen size: 640px */
+    ul {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
 }
 
  
